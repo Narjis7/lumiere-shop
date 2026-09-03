@@ -1,0 +1,590 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: #e3e1ec82;
+}
+li{
+    list-style: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #5F5E5E;
+}
+.navlinks li snap{
+  text-decoration: underline;
+  color: #214FC7;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 0.1px solid #5f5e5e6b;
+}
+.navlinks , .icons{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 64px;
+}
+.icons{
+    gap: 16px;
+}
+.navlinks{
+    gap: 32px;
+}
+.navbar h1{
+    color: #214FC7;
+    font-size: 48px;
+    font-weight: bold;
+}
+.hero {
+    margin-top: 80px;
+  height: 100vh;
+  position: relative;
+  margin-left: 16px;
+  margin-right: 16px;
+  overflow: hidden;
+}
+
+/* 1. تجعل حاوية الصورة تغطي المساحة بالكامل كخلفية */
+.img-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 2. إضافة طبقة التدرج اللوني (Overlay) فوق الصورة مباشرة */
+.img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.489), rgba(255, 255, 255, 0.155));
+  pointer-events: none;
+}
+
+/* 3. جعل النص يظهر فوق الصورة والتدرج اللوني */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 420px; /* تقليل العرض لكي يتنسق النص مثل التصميم المطلوب */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px; /* تزييح النص قليلاً إلى اليمين من الطرف */
+  gap: 16px; /* مسافة متناسقة بين العناصر */
+}
+.hero h1{
+    font-size: 72px;
+    font-weight: bold;
+    color: #1A1B22;
+}
+.hero p{
+    width: 442px;
+    height: 84px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #434654;
+    margin-top: 16px;
+    white-space: pre-line;
+     transform: translateX(15px);
+}
+.hero button{
+    width: fit-content;
+    margin-top: 40px;
+    padding: 16px 32px;
+    background-color: #214FC7;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    white-space: pre;
+}
+.content button img {
+  width: 14px;
+  height: auto;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 64px;
+    margin-top: 160px;
+    margin-left:80px;
+    margin-right:80px;
+    border-bottom: 0.1px solid #5f5e5e6b;
+}
+.title h1{
+    font-size: 24px;
+    font-weight: 600;
+    color: #1A1B22;
+}
+.select{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+.title p{
+    font-size: 12px;
+    font-weight: 600;
+    color: #1A1C1D;
+    background-color: #E2E2E4;
+    padding: 8px 16px;
+    border-radius: 9999px;
+}
+.product{
+    width: 100%;
+}
+.product img{
+    width: 270px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.product h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: #1A1B22;
+}
+.product p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #5F5E5E;
+}
+.shop{
+  
+    margin-top: 48px;
+    margin-left:64px;
+    margin-right:64px;
+    display:flex;
+    align-items: center;
+    gap: 24px;
+}
+.size{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.size h3{
+    font-size: 12px;
+    font-weight: 400;
+    color: #1A1B22;
+}
+.size p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #1A1B22;
+    background-color: #E3E1EC;
+    border-radius: 9999px;
+    padding: 0 5.5px;
+
+}
+.product button{
+    width: 262px;
+    height: 50px;
+    margin-top: 12px;
+    padding: 0 12px;
+    background-color: #FBF8FF;
+    color: #1A1B22;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #5F5E5E;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.product button:hover{
+    background-color: #434654;
+    color: #FFFFFF;
+}
+.order {
+    width:466px;
+    height: 546px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 32px;
+ 
+   
+}
+.order h4{
+      font-size: 24px;
+    font-weight: 600;
+    color: #1A1B22;
+    width: 100%;
+    height: 49px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    border-bottom: 0.1px solid #5f5e5e6b;
+}
+.delivery h1{
+    font-size: 24px;
+    font-weight: 600;
+    color: #1A1B22;
+    width: 100%;
+    height: 49px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    border-bottom: 0.1px solid #5f5e5e6b;
+}
+.items{
+   
+    width: 100%;
+    height: 200px ;
+    border-bottom: 0.1px solid #5f5e5e6b;
+    display: flex;
+    flex-direction: column;
+   
+}
+#empty{
+    font-size: 16px;
+    font-weight: 400;
+    color: #5F5E5E;
+    text-align: center;
+    margin-top: 48px;
+}
+
+
+/*-------------Start of item------------ */
+.item{
+     width: 100%;
+    background-color: #FBF8FF;
+    border: 1px solid #C4C5D6;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 12px;
+   padding: 12px;
+   margin-bottom: 24px;
+}
+.item h3{
+    font-size: 16px;
+    font-weight: 500;
+    color: #1A1B22;
+}
+.item p{
+    font-size: 14px;
+    color: #5F5E5E;
+}
+.item img{
+   width: 64px;
+    height: 80px;
+    border-radius: 6px;
+}
+.count{
+    display: flex;
+    margin: 8px 0;
+}
+.item button{
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    border: 1px solid #C4C5D6;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+.item button:hover{
+    background-color: #e3e1ec;
+}
+.item h2{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    width: 16px;
+    margin: 0 16px;
+}
+.item h1{
+    
+    font-size: 16px;
+    font-weight: 500;
+   color: #1A1B22;
+}
+/*-------------End of item----------------------- */
+
+
+.price{
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 12px;
+    border-bottom: 0.1px solid #5f5e5e6b;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+}
+.price ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1B22;
+}
+.total h1{
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1B22;
+}
+.delivery {
+    width: 662px;
+    height: 546px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 32px;
+  
+}
+.delivery .form-row{
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    
+}
+.delivery label{
+    font-size: 12px;
+    font-weight: 600;
+    color: #5F5E5E;
+    margin-top: 24px;
+    width: 100%;
+    height: 16px;
+    padding: auto;
+}
+
+.delivery div input{
+    width: 100%;
+    height: 48px;
+    background-color: #FBF8FF;
+    border: 1px solid #C4C5D6;
+    border-radius: 12px;
+    width: 286px;
+    height: 50px;
+   padding: 0 16px;
+   color: #6B7280;
+   font-size: 16px;
+   font-weight: 400;
+}
+.delivery input[placeholder="123 Main St, City, State 12345"]{
+    width: 100%;
+    height: 98px;
+    background-color: #FBF8FF;
+    border: 1px solid #C4C5D6;
+    border-radius: 12px;
+    padding: 0 16px;
+    color: #6B7280;
+    font-size: 16px;
+    font-weight: 400;
+  
+}
+.del{
+    margin-top: 24px;
+    width: 100%;
+    height: 78px;
+    border-radius: 12px;
+    background-color: #F4F2FD;
+    border: 1px solid #E3E1EC;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+.del img{
+    width: 22px;
+    height: 16px;
+  
+}
+.del p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #1A1B22;
+  white-space: pre-line;
+  padding-left: 16px;
+}
+.del p span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #5F5E5E;
+}
+.delivery button{
+    width: 100%;
+    height: 56px;
+    background-color: #4169E1;
+    color: #FFFFFF;
+    border-radius: 12px;
+    border: none;
+    margin-top: 24px;
+    cursor: pointer;
+}
+.buy{
+    display: flex;
+ 
+   
+    gap: 24px;
+    margin: 80px 80px;
+}
+.footer{
+    width: 100%;
+    height: 160px;
+    background-color: #FFFFFF;
+    padding-left: 64px;
+    padding-right: 64px;
+    margin-bottom: 73px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer h1{
+font-size: 24px;
+font-weight: 600;
+color: #1A1B22;
+}
+.footer ul{
+display: flex;
+align-items: center;
+gap: 24px;
+
+}
+.footer li{
+font-size: 16px;
+font-weight: 400;
+color: #5F5E5E;
+}
+.footer p{
+font-size: 14px;
+font-weight: 400;
+color: #5F5E5E;
+ text-wrap: balance;
+
+}
+/* Mobile */
+@media (max-width: 767px) {
+.shop{
+   display: grid;
+   grid-template-columns: auto;
+   align-items: center;
+   justify-content: center;
+  
+}
+.product{ 
+    margin-top: 24px;
+}
+.navlinks{
+    display: none;
+}
+.navbar{
+    display: inline-flex;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+.select{ 
+    display: none;
+}
+.buy{
+   
+   display: grid;
+   grid-template-columns: 1fr;
+   align-items: center;
+   justify-content: center;
+   margin: 80px 61px;
+}
+.order{
+    width: 100%;
+    height: 100%;
+
+}
+.delivery{
+ width: 100%;
+ height: 100%;
+
+}
+.delivery .form-row{
+    display: block;
+}
+.form-row input{
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+.footer{
+    display: flex;
+ flex-direction: column;
+ justify-content: center;
+ gap: 24px;
+}
+.footer ul{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+}
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+.shop{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+.buy{
+   
+   display: grid;
+   grid-template-columns: 1fr;
+   align-items: center;
+   justify-content: center;
+   margin: 80px 61px;
+}
+.order{
+    width: 100%;
+
+}
+.delivery{
+ width: 100%;
+
+}
+.footer{
+
+ gap: 29px;
+}
+.footer ul{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+}
+}
+
+
